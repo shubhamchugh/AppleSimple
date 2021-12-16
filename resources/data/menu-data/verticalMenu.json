@@ -1,0 +1,107 @@
+{
+  "menu": [
+    {
+      "name": "Dashboard",
+      "badge": "2",
+      "badgeClass": "badge badge-light-warning badge-pill ml-auto mr-1",
+      "icon": "home",
+      "slug": ""
+    },
+
+    {
+      "navheader": "Post Management",
+      "slug": ""
+    },
+    {
+      "name": "Post",
+      "icon": "layers",
+      "slug": "",
+      "submenu": [
+        {
+          "url": "logins",
+          "name": "All Post",
+          "icon": "circle",
+          "slug": "logins.index"
+        },{
+          "url": "logins/create",
+          "name": "Add New",
+          "icon": "circle",
+          "slug": "logins.create"
+        }
+      ]
+    },
+
+    {
+      "navheader": "Page Management",
+      "slug": ""
+    },
+    {
+      "name": "Page",
+      "icon": "layers",
+      "slug": "",
+      "submenu": [
+        {
+          "url": "content",
+          "name": "All Pages",
+          "icon": "circle",
+          "slug": "content.index"
+        },
+        {
+          "url": "content/create",
+          "name": "Add New",
+          "icon": "circle",
+          "slug": "content.create"
+        }
+      ]
+    },
+
+    {
+      "navheader": "Account Settings",
+      "slug": ""
+    },
+    {
+      "name": "General Settings",
+      "icon": "settings",
+      "slug": "",
+      "submenu": [
+        {
+          "url": "settings",
+          "name": "Basic Configuration",
+          "icon": "circle",
+          "slug": "settings.index"
+        },
+        {
+          "url": "scraping",
+          "name": "Scraping",
+          "icon": "circle",
+          "slug": "scraping.index"
+        }
+      ]
+    },
+    {
+      "name": "User",
+      "icon": "user",
+      "slug": "",
+      "submenu": [
+        {
+          "url": "user",
+          "name": "All Users",
+          "icon": "circle",
+          "slug": "user.index"
+        },
+        {
+          "url": "app/user/view",
+          "name": "View",
+          "icon": "circle",
+          "slug": "app-user-view"
+        },
+        {
+          "url": "app/user/edit",
+          "name": "Edit",
+          "icon": "circle",
+          "slug": "app-user-edit"
+        }
+      ]
+    }
+  ]
+}

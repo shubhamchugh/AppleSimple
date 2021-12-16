@@ -1,0 +1,72 @@
+{
+  "menu": [
+    {
+      "name": "Dashboard",
+      "badge": "2",
+      "badgeClass": "badge badge-light-warning badge-pill ml-auto mr-1",
+      "icon": "home",
+      "slug": ""
+    },
+
+    {
+      "navheader": "Leads Management",
+      "slug": ""
+    },
+    {
+      "name": "Leads",
+      "icon": "layers",
+      "slug": "",
+      "submenu": [
+        {
+          "url": "leads",
+          "name": "All Leads",
+          "icon": "circle",
+          "slug": "leads.index"
+        }
+      ]
+    },
+
+    {
+      "navheader": "Account Settings",
+      "slug": ""
+    },
+    {
+      "name": "General Settings",
+      "icon": "settings",
+      "slug": "",
+      "submenu": [
+        {
+          "url": "app/user/list",
+          "name": "Basic Configuration",
+          "icon": "circle",
+          "slug": "app-user-list"
+        }
+      ]
+    },
+    {
+      "name": "User",
+      "icon": "user",
+      "slug": "",
+      "submenu": [
+        {
+          "url": "user",
+          "name": "All Users",
+          "icon": "circle",
+          "slug": "user.index"
+        },
+        {
+          "url": "app/user/view",
+          "name": "View",
+          "icon": "circle",
+          "slug": "app-user-view"
+        },
+        {
+          "url": "app/user/edit",
+          "name": "Edit",
+          "icon": "circle",
+          "slug": "app-user-edit"
+        }
+      ]
+    }
+  ]
+}
