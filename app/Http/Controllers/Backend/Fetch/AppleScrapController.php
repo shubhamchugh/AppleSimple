@@ -43,7 +43,7 @@ class AppleScrapController extends Controller
             if (empty($duplicate_check)) {
                 echo "$source_url->url";
 
-                $response = Browsershot::url($source_url->url)->windowSize(1000, 1000)->waitUntilNetworkIdle(false)->userAgent('Mozilla / 5.0 (compatible; MSIE 7.0; Windows; U; Windows NT 10.0; Trident / 4.0)')->evaluate("document.documentElement.outerHTML");
+                $response = Browsershot::url($source_url->url)->windowSize(1000, 1000)->waitUntilNetworkIdle(false)->userAgent('Mozilla/5.0 (iPhone; CPU iPhone OS 13_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/604.1')->evaluate("document.documentElement.outerHTML");
                 // $response = Browsershot::url($source_url->url)->bodyHtml();
 
                 //  echo $response;
@@ -76,7 +76,7 @@ class AppleScrapController extends Controller
                     dd("Have Not Valid Answer In this thread");
                 }
                 echo "<br>$thread_Url";
-                $responseFull = Browsershot::url($thread_Url)->windowSize(1000, 1000)->waitUntilNetworkIdle(false)->userAgent('Mozilla / 5.0 (compatible; MSIE 7.0; Windows; U; Windows NT 10.0; Trident / 4.0)')->evaluate("document.documentElement.outerHTML");
+                $responseFull = Browsershot::url($thread_Url)->windowSize(1000, 1000)->waitUntilNetworkIdle(false)->userAgent('Mozilla/5.0 (iPhone; CPU iPhone OS 13_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/604.1')->evaluate("document.documentElement.outerHTML");
 
                 $apple_doc = new \DOMDocument();
                 libxml_use_internal_errors(true); //disable libxml errors
@@ -94,7 +94,11 @@ class AppleScrapController extends Controller
                 $Answers_selected = $apple_xpath->query('/html/body/div[4]/main/div/div[1]/section[*]/div[2]/div/div[1]/div[1]');
                 $Answers_featured = $apple_xpath->query('/html/body/div[4]/main/div/section[*]/div[2]/article[11]/div[2]/div/div[1]/div[1]');
                 $Answers          = $apple_xpath->query('/html/body/div[4]/main/div/section[2]/div[2]/article[*]/div[2]/div/div[1]/div[1]');
-                $Questions        = $apple_xpath->query('/html/body/div[4]/main/div/div[1]/section[1]/div[2]/div/h1/span[3]');
+                $Questions        = $apple_xpath->query('
+                /html/body/div[4]/main/div/div[1]/section[1]/div[2]/div/h1/span[3]/text() or 
+                /html/body/div[4]/main/div/div[1]/section/div[2]/div/h1/span[3] or 
+                /html/body/div[4]/main/div/div[1]/section[1]/div[2]/div/h1/span[3]
+                ');
                 $Questions_dec    = $apple_xpath->query('/html/body/div[4]/main/div/div[1]/section/div[2]/div/div[2]/div[1]');
 
                 $loop_count = $Answers_single->length + $Answers_featured->length + $Answers->length + $Answers_selected->length;
