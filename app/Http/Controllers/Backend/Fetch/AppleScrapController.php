@@ -94,7 +94,7 @@ class AppleScrapController extends Controller
                 $Answers_selected = $apple_xpath->query('/html/body/div[4]/main/div/div[1]/section[*]/div[2]/div/div[1]/div[1]');
                 $Answers_featured = $apple_xpath->query('/html/body/div[4]/main/div/section[*]/div[2]/article[11]/div[2]/div/div[1]/div[1]');
                 $Answers          = $apple_xpath->query('/html/body/div[4]/main/div/section[2]/div[2]/article[*]/div[2]/div/div[1]/div[1]');
-                $Questions        = $apple_xpath->query('/html/body/div[4]/main/div/div[1]/section[1]/div[2]/div/h1/span[3]');
+                $Questions        = $apple_xpath->query('//*[@id="content-post-title"]/span[3]');
                 $Questions_dec    = $apple_xpath->query('/html/body/div[4]/main/div/div[1]/section/div[2]/div/div[2]/div[1]');
 
                 $loop_count = $Answers_single->length + $Answers_featured->length + $Answers->length + $Answers_selected->length;
